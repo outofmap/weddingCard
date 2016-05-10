@@ -22,7 +22,6 @@ var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
-    password : 'insideout1209',
     database : 'wedding'
 });
 app.get('/gallery', function(req,res){
