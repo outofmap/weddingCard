@@ -1,5 +1,4 @@
 var express = require('express');
-var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var app = express();
 var bodyparser = require('body-parser').urlencoded({extended:true});
 var formidable = require('formidable');
@@ -10,28 +9,25 @@ app.use(bodyparser);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/pics', express.static(path.join(__dirname, 'uploads')));
 app.set('port',process.env.PORT || 3000);
-
-app.engine('handlebars', handlebars.engine);
-app.set('view engine','handlebars');
-// app.set('view engine', 'html');
-app.get('/upload', function (req,res) {
-    res.render('upload');
-});
+app.set('view engine','ejs');
 var imageUrl = "./img/";
 var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
-    database : 'wedding'
+    database : 'wedding',
+    password : 'insideout1209'
+});
+
+app.get('/',function(req,res){
+    res.render('index');
+})
+app.get('/upload', function (req,res) {
+    res.render('upload');
 });
 app.get('/gallery', function(req,res){
     pool.getConnection(function(err, connection) {
-    // Use the connection
         connection.query( 'SELECT filename from image', function(err, rows) {
-        // And done with the connection. connection.release();
-        // Don't use the connection here, it has been returned to the pool. });
-            console.log(rows[0].filename);
-            console.log(rows[1].filename);
             var images = [];
             for(var i =0; i < rows.length; i++){
                 images[i] = rows[i].filename;
@@ -42,7 +38,6 @@ app.get('/gallery', function(req,res){
             connection.release();
         });
     });
-
 });
 app.post('/uploadIMG',function(req, res){
     var form = new formidable.IncomingForm();
@@ -55,13 +50,9 @@ app.post('/uploadIMG',function(req, res){
         console.log("filename:"+filename);
 
     });
-    form.on('progress', function(bytesReceived, bytesExpected) {
-    });
-    form.parse(req, function(err, fields, files) {
-    });
+
     form.on('end',function(){
         pool.getConnection(function(err, connection) {
-        // Use the connection
             connection.query( 'INSERT INTO image SET filename = ?', filename , function(err, rows) {
                 res.redirect('/sucess');
                 connection.release();

@@ -11,7 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
-     {{{body}}}
+    <form action="/uploadIMG" enctype="multipart/form-data" method="post">
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>File찾기</span>
+                <input type="file" name="image" accept="image/*">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+            <!-- <input type="file" name="image1" size="40" accept="image/*"><br><br>
+            <input type="file" name="image2" size="40" accept="image/*"><br><br> -->
+        </div>
+        <input type="submit" value="파일 업로드">
+    </form>
 </body>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
