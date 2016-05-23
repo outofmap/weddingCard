@@ -56,7 +56,7 @@
 								<li><a href="single-post.html">Single Post</a></li>
 							</ul>
 						</li>
-						<li class="scroll"><a href="#gallery">GAllery</a></li>
+						<li class="scroll"><a href="#gallery">Gallery</a></li>
 						<li class="scroll"><a href="#our_location">our location</a></li>
 					</ul>
 				</nav> <!-- /#main_navigation -->
@@ -358,18 +358,18 @@
 					<h1>축하해 주세요!</h1>
 					<div class="rsvp_wrap">
 						<h2>Letters to lovely couple</h2>
-						<form class="contact-form" method="post" action="#">
-							<p><input type="text" name="name" class="name" placeholder="Your Name*"></p>
-							<p><input type="text" name="email" class="email" placeholder="password*"></p>
+						<form class="contact-form" method="post" action="/writeMessage">
+							<p><input type="text" name="name" class="name" placeholder="이름*"></p>
+							<p><input type="text" name="password" class="password" placeholder="비밀번호*"></p>
 							<!-- <select class="guest" name="guest">
 								<option selected="selected" value="Guest">Guest*</option>
 								<option value="Relatives">Relatives*</option>
 								<option value="Others">Others*</option>
 							</select> -->
-							<input type="text" name="attend" class="attend" placeholder="축하 메시지*">
-							<button type="submit">신랑,신부에게 보내기</button>
+							<textarea id="message" name="message" placeholder="축하 메시지* (최대 300글자)" rows="3"></textarea>
+							<button type="submit">보내기</button>
 						</form>
-						<!--여기에 최근 3개 축하메시지 보여주기-->
+						<!--여기에 최근 3개 축하메시지 보여주기 get요청 include-->
 					</div>
 				</div>
 			</div>

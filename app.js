@@ -11,6 +11,7 @@ app.use('/pics', express.static(path.join(__dirname, 'uploads')));
 app.set('port',process.env.PORT || 3000);
 app.set('view engine','ejs');
 var imageUrl = "./img/";
+
 var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
@@ -21,10 +22,32 @@ var pool = mysql.createPool({
 
 app.get('/',function(req,res){
     res.render('index');
-})
+});
 app.get('/upload', function (req,res) {
     res.render('upload');
 });
+
+app.post('/writeMessage', function (req,res) {
+    var name = req.body.name;
+    var password = req.body.password;
+    var message = req.body.message;
+    var post  = {name: name, password: password, letter:message};
+    console.log("name"+name);
+    console.log("pw"+password);
+    console.log("메시지"+message);
+    console.log("post"+post);
+    debugger;
+    pool.getConnection(function (err,connection) {
+        var query = connection.query('INSERT INTO post SET ?', post, function (err, result) {
+            res.json({
+                "name":name, "message":message
+            });
+            connection.release();
+        });
+        console.log(query.sql);
+    });
+});
+
 app.get('/gallery', function(req,res){
     pool.getConnection(function(err, connection) {
         connection.query( 'SELECT filename from image', function(err, rows) {
@@ -66,6 +89,6 @@ app.get('/sucess', function (req,res) {
 });
 
 app.listen(app.get('port'),function () {
-  console.log('Express started on http://localhost'+
-  app.get('port')+';press ctrl+C to terminate');
+    console.log('Express started on http://localhost'+
+    app.get('port')+';press ctrl+C to terminate');
 });

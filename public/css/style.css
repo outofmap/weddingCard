@@ -531,6 +531,7 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	padding: 90px 50px 40px;
 	text-align: center;
 	margin-top: -75px;
+    width: 96%;
 }
 #groom_bride .info-box h2 {
 	color: #4f4f4f;
@@ -1018,6 +1019,19 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	display: block;
 	height: 50px;
 	line-height: 30px;
+	color: #939393;
+	outline: none;
+
+}
+#message {
+	width: 215px;
+	margin: 0 auto 15px;
+	padding: 0 20px;
+	border: 1px solid #E5E5E5;
+	border-radius: 5px;
+	display: block;
+	height: 100px;
+	line-height: 150%;
 	color: #939393;
 	outline: none;
 
