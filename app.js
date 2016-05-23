@@ -4,6 +4,7 @@ var bodyparser = require('body-parser').urlencoded({extended:true});
 var formidable = require('formidable');
 var path = require('path');
 var mysql = require('mysql');
+var bcrypt = require('bcrypt-nodejs');
 
 app.use(bodyparser);
 app.use(express.static(path.join(__dirname, 'public')));
@@ -31,22 +32,35 @@ app.post('/writeMessage', function (req,res) {
     var name = req.body.name;
     var password = req.body.password;
     var message = req.body.message;
-    var post  = {name: name, password: password, letter:message};
-    console.log("name"+name);
-    console.log("pw"+password);
-    console.log("메시지"+message);
-    console.log("post"+post);
-    debugger;
-    pool.getConnection(function (err,connection) {
-        var query = connection.query('INSERT INTO post SET ?', post, function (err, result) {
-            res.json({
-                "name":name, "message":message
+    bcrypt.hash(password,null ,null,function (err,hash) {
+        //store pw to DB
+        console.log("after bcrypt:"+hash);
+        var post  = {name: name, password: hash, letter:message};
+        console.log("name"+name);
+        console.log("pw"+password);
+        console.log("메시지"+message);
+        pool.getConnection(function (err,connection) {
+            var query = connection.query('INSERT INTO post SET ?', post, function (err, result) {
+                res.json({
+                    "name":name, "message":message
+                });
+                connection.release();
             });
-            connection.release();
+            console.log(query.sql);
         });
-        console.log(query.sql);
     });
+
 });
+// bcrypt.compare('word',디비에서 가져온 password,function (err,res) {
+//     if(err){
+//         console.log("error");
+//     }else if(res){
+//         console.log("password is true.");
+//         console.log("res:"+res);
+//     }else{
+//         console.log("password not matched.");
+//     }
+// });
 
 app.get('/gallery', function(req,res){
     pool.getConnection(function(err, connection) {
