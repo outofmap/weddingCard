@@ -21,9 +21,10 @@
 	var map;
 
 	map = new GMaps({
+		//37.533734, 126.977623
 		el: '#gmap',
-		lat: 34.056772,
-		lng: -118.244174,
+		lat: 37.533734,
+		lng: 126.977623244174,
 		scrollwheel:false,
 		zoom: 16,
 		zoomControl : true,
@@ -36,26 +37,26 @@
 
 	var image = '';
 	map.addMarker({
-		lat: 34.056772,
-		lng: -118.244174,
+		lat: 37.533734,
+		lng: 126.977623244174,
 		infoWindow: {
-			content: '<p class="map-info"><strong>Los Angeles</strong> <br/> Angel Street 146, B16 <br/> (058) 569 3668</p>'
+			content: '<p class="map-info"><strong>국방컨벤션 1층 에메랄드 홀</strong> <br/>서울시 용산구 이태원로 22<br/>02-748-0707</p>'
 		}
 	});
-	map.addMarker({
-		lat: 34.056459,
-		lng: -118.247132,
-		infoWindow: {
-			content: '<p class="map-info"><strong>Los Angeles</strong> <br/> Olvera Street <br/> (058) 569 3668</p>'
-		}
-	});
-	map.addMarker({
-		lat: 34.057469,
-		lng: -118.237551,
-		infoWindow: {
-			content: '<p class="map-info"><strong>Los Angeles</strong> <br/> Grand Park <br/> (058) 569 3668</p>'
-		}
-	});
+	// map.addMarker({
+	// 	lat: 34.056459,
+	// 	lng: -118.247132,
+	// 	infoWindow: {
+	// 		content: '<p class="map-info"><strong>Los Angeles</strong> <br/> Olvera Street <br/> (058) 569 3668</p>'
+	// 	}
+	// });
+	// map.addMarker({
+	// 	lat: 34.057469,
+	// 	lng: -118.237551,
+	// 	infoWindow: {
+	// 		content: '<p class="map-info"><strong>Los Angeles</strong> <br/> Grand Park <br/> (058) 569 3668</p>'
+	// 	}
+	// });
 
 
 	var styles = [
@@ -257,7 +258,7 @@
 				var letter = data.message;
 				console.log("writer"+data.name);
 				console.log("letter "+data.message);
-				$('.contact-form').append("<span>등록완료</span>");
+				$('.contact-form').append("<span>전송완료!</span>");
 			}).fail(function () {
 				alert("message posting error.");
 			});

@@ -986,6 +986,23 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	padding: 70px 0;
 	background: rgba(255,109,109,.9);
 }
+#posts {
+	background-color: #F77A7A;
+	color: #FFF;
+	font-size: 15px;
+	margin-top: 5px;
+	/*width: 310px;
+	margin: 0 auto 15px;
+	padding: 0 20px;
+	border: 1px solid #E5E5E5;
+	border-radius: 5px;
+	display: block;
+	height: 50px;
+	line-height: 30px;
+	color: #939393;
+	outline: none;*/
+
+}
 #rsvp h1 {
 	font-size: 36px;
 	line-height: 30px;
@@ -1053,12 +1070,12 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 
 }
 #rsvp .rsvp_wrap button[type="submit"]:before {
-  border-radius: 5px;
-  background: #fff;
-  border: 1px solid #FF6D6D;
+	border-radius: 5px;
+	background: #fff;
+	border: 1px solid #FF6D6D;
 }
 #rsvp .rsvp_wrap button[type="submit"]:hover, #rsvp .rsvp_wrap button[type="submit"]:focus, #rsvp .rsvp_wrap button[type="submit"]:active {
-  color: #FF6D6D;
+	color: #FF6D6D;
 }
 
 #rsvp .contact-form .error {
@@ -1066,26 +1083,27 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	color: #fff;
 }
 #rsvp .contact-form .error::-webkit-input-placeholder {
-   color: #fff;
+	color: #fff;
 }
 
 #rsvp .contact-form .error:-moz-placeholder { /* Firefox 18- */
-   color: #fff;
+	color: #fff;
 }
 
 #rsvp .contact-form .error::-moz-placeholder {  /* Firefox 19+ */
-   color: #fff;
+	color: #fff;
 }
 
 #rsvp .contact-form .error:-ms-input-placeholder {
-   color: #fff;
+	color: #fff;
 }
+
 
 
 
 /*==========================
- # 15.  Blog Styles
- =========================*/
+# 15.  Blog Styles
+=========================*/
 
 #blog {
 	background: #F9F7F1;
@@ -1153,12 +1171,12 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 }
 
 #blog .single_blog_post a.readmore:before {
-  border-radius: 5px;
-  background: #fff;
-  border: 1px solid #FF6D6D;
+	border-radius: 5px;
+	background: #fff;
+	border: 1px solid #FF6D6D;
 }
 #blog .single_blog_post a.readmore:hover, #blog .single_blog_post a.readmore:focus, #blog .single_blog_post a.readmore:active {
-  color: #FF6D6D;
+	color: #FF6D6D;
 }
 #blog .single_blog_post .image-wrap {
 	position: relative;
@@ -1168,11 +1186,11 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	transition: all 0.8s ease 0s;
 }
 #blog .single_blog_post:hover .image-wrap img {
-  -moz-transform: scale(1.5) rotate(10deg);
-  -webkit-transform: scale(1.5) rotate(10deg);
-  -ms-transform: scale(1.5) rotate(10deg);
-  -o-transform: scale(1.5) rotate(10deg);
-  transform: scale(1.5) rotate(10deg);
+	-moz-transform: scale(1.5) rotate(10deg);
+	-webkit-transform: scale(1.5) rotate(10deg);
+	-ms-transform: scale(1.5) rotate(10deg);
+	-o-transform: scale(1.5) rotate(10deg);
+	transform: scale(1.5) rotate(10deg);
 }
 
 #blog .single_blog_post .image-wrap .overlay {
@@ -1195,8 +1213,8 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 }
 
 /*==========================
- # 16.  Gallery Styles
- =========================*/
+# 16.  Gallery Styles
+=========================*/
 
 
 #gallery .container-fluid {
@@ -1241,8 +1259,8 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 }
 
 /*==========================
- # 17.  Our Location Styles
- =========================*/
+# 17.  Our Location Styles
+=========================*/
 
 #our_location {
 
@@ -1267,8 +1285,8 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 }
 
 /*==========================
- # 18.  Gmap Styles
- =========================*/
+# 18.  Gmap Styles
+=========================*/
 
 #gmap {
 
@@ -1290,13 +1308,13 @@ div#gmap {
 div#gmap:before, div#gmap:after {display:none;}
 
 #gmap p {
-  margin: 0px;
-  padding: 10px;
+	margin: 0px;
+	padding: 10px;
 }
 
 /*==========================
- # 19.  Footer Styles
- =========================*/
+# 19.  Footer Styles
+=========================*/
 
 footer {
 	background: #303030;
@@ -1321,8 +1339,8 @@ footer {
 }
 
 /*==========================
- # 20.  Blog Featured Styles
- =========================*/
+# 20.  Blog Featured Styles
+=========================*/
 
 .blog #header-featured {
 	background: url(images/background/slider-bg.jpg) center center no-repeat;
@@ -1367,8 +1385,8 @@ footer {
 }
 
 /*========================================
- # 21.  Blog Page Blog Section Styles
- =========================================*/
+# 21.  Blog Page Blog Section Styles
+=========================================*/
 
 .blog #blog {
 	padding-top: 65px;
@@ -1416,8 +1434,8 @@ footer {
 
 
 /*==========================
- # 22.  Blog Details Styles
- =========================*/
+# 22.  Blog Details Styles
+=========================*/
 
 .single #author {
 	background: #FF6D6D;
@@ -1468,8 +1486,8 @@ footer {
 }
 
 /*====================================
- # 23.  Single blog_content Styles
- ===================================*/
+# 23.  Single blog_content Styles
+===================================*/
 
 .single #blog_content {
 	background: #F9F7F1;
@@ -1656,8 +1674,8 @@ footer {
 
 
 /*==========================
- # 24.  Responsive Styles
- =========================*/
+# 24.  Responsive Styles
+=========================*/
 
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
 	#blog .container > .row {
@@ -1679,11 +1697,11 @@ footer {
 		width: 600px;
 	}
 	.single #blog_content .comment_form .form_top input[type="text"], .single #blog_content .comment_form .form_top input[type="email"] {
-    	width: 31%;
-    }
-    .single #blog_content .comment_form .form_wrapper textarea {
-    	width: 97.5%;
-    }
+		width: 31%;
+	}
+	.single #blog_content .comment_form .form_wrapper textarea {
+		width: 97.5%;
+	}
 }
 
 
@@ -1698,64 +1716,64 @@ footer {
 
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-    #love_story ul li > div:first-child {
-    	padding-right: 30px;
-    }
-    #love_story ul li > div:last-child {
-    	padding-left: 30px;
-    }
-    #love_story .details .details_content {
-    	width: 330px;
-    }
-    #important_people .row div .info-box {
-    	width: auto;
-    	text-align: center;
-    }
-    #important_people .row div img {
-    	float: none !important;
-    	display: block;
-    	margin: 0 auto;
-    	margin-bottom: 15px;
-    }
-    #event_parties .single_event:first-child {
-    	margin-left: 0;
-    }
-    #event_parties .single_event:last-child {
-    	margin-right: 0;
-    }
-    #event_parties .single_event {
-    	margin-right: 15px;
-    	width: 240px;
-    }
-    #blog .row > .single_blog_post:first-child {
-    	margin-left: 0;
-    }
-    #blog .single_blog_post {
-    	width: 235px;
-    }
-    #blog .container > .row {
-    	padding-left: 15px;
-    }
-    #our_location .single_location {
-    	margin-right: 0;
-    }
-    #our_location .single_location:last-child {
-    	margin: 0 auto;
-    	float: none;
-    }
-    .single #blog_content .comment_section .single_comment .comment_details {
-    	width: 510px;
-    }
-    .single #blog_content .comment_section,
-    .single #blog_content .comment_form {
-    	padding: 25px 50px;
-    }
-    .single #blog_content .comment_form .form_top input[type="text"], .single #blog_content .comment_form .form_top input[type="email"] {
-    	width: 31%;
-    }
-    .single #blog_content .comment_form .form_wrapper textarea {
-    	width: 97.5%;
-    }
+	#love_story ul li > div:first-child {
+		padding-right: 30px;
+	}
+	#love_story ul li > div:last-child {
+		padding-left: 30px;
+	}
+	#love_story .details .details_content {
+		width: 330px;
+	}
+	#important_people .row div .info-box {
+		width: auto;
+		text-align: center;
+	}
+	#important_people .row div img {
+		float: none !important;
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 15px;
+	}
+	#event_parties .single_event:first-child {
+		margin-left: 0;
+	}
+	#event_parties .single_event:last-child {
+		margin-right: 0;
+	}
+	#event_parties .single_event {
+		margin-right: 15px;
+		width: 240px;
+	}
+	#blog .row > .single_blog_post:first-child {
+		margin-left: 0;
+	}
+	#blog .single_blog_post {
+		width: 235px;
+	}
+	#blog .container > .row {
+		padding-left: 15px;
+	}
+	#our_location .single_location {
+		margin-right: 0;
+	}
+	#our_location .single_location:last-child {
+		margin: 0 auto;
+		float: none;
+	}
+	.single #blog_content .comment_section .single_comment .comment_details {
+		width: 510px;
+	}
+	.single #blog_content .comment_section,
+	.single #blog_content .comment_form {
+		padding: 25px 50px;
+	}
+	.single #blog_content .comment_form .form_top input[type="text"], .single #blog_content .comment_form .form_top input[type="email"] {
+		width: 31%;
+	}
+	.single #blog_content .comment_form .form_wrapper textarea {
+		width: 97.5%;
+	}
 }
 
 /*
@@ -1892,24 +1910,24 @@ footer {
 		margin-right:  auto;
 	}
 	#love_story ul li > div:first-child .details_content {
-    	float: none;
-    }
+		float: none;
+	}
 	#love_story ul li > div:last-child .details_content {
-    	float: none;
-    }
-    #love_story .details .details_content {
-    	width: 280px;
-    	margin: 0 auto;
-    }
-    #love_story ul li > div:last-child {
-    	padding-left: 0;
-    }
-    #rsvp .rsvp_wrap {
-    	width: 290px;
-    }
-    #rsvp .rsvp_wrap input, #rsvp .rsvp_wrap select , #rsvp .rsvp_wrap button[type="submit"] {
-    	width: 215px;
-    }
+		float: none;
+	}
+	#love_story .details .details_content {
+		width: 280px;
+		margin: 0 auto;
+	}
+	#love_story ul li > div:last-child {
+		padding-left: 0;
+	}
+	#rsvp .rsvp_wrap {
+		width: 290px;
+	}
+	#rsvp .rsvp_wrap input, #rsvp .rsvp_wrap select , #rsvp .rsvp_wrap button[type="submit"] {
+		width: 215px;
+	}
 	#slider .time_counter {
 		width: 255px;
 		margin: 0 auto;
@@ -1970,11 +1988,11 @@ footer {
 		z-index: 99999;
 	}
 	#header #main_navigation {
-	  min-height: 0;
-	  position: fixed;
-	  right: 0;
-	  top: 0;
-	  z-index: 99999999;
+		min-height: 0;
+		position: fixed;
+		right: 0;
+		top: 0;
+		z-index: 99999999;
 	}
 	#main_navigation ul {
 		display: none;
@@ -1988,15 +2006,15 @@ footer {
 		padding: 30px;
 	}
 	#main_navigation ul:before {
-	  content: "\f0d8";
-	  font-family: 'FontAwesome';
-	  display: inline-block;
-	  font-size: 35px;
-	  line-height: 25px;
-	  color: #FC7070;
-	  position: absolute;
-	  top: -20px;
-	  right: 15px;
+		content: "\f0d8";
+		font-family: 'FontAwesome';
+		display: inline-block;
+		font-size: 35px;
+		line-height: 25px;
+		color: #FC7070;
+		position: absolute;
+		top: -20px;
+		right: 15px;
 	}
 	#main_navigation ul li {
 		display: block;
@@ -2056,14 +2074,14 @@ footer {
 		font-size: 34px;
 		line-height: 43px;
 	}
-    #love_story .details .details_content {
-       	width: 365px;
-    	margin: 0 auto;
-    }
-    #rsvp .rsvp_wrap {
-    	width: 410px;
-    }
-    #rsvp .rsvp_wrap input, #rsvp .rsvp_wrap select {
-    	width: 310px;
-    }
+	#love_story .details .details_content {
+		width: 365px;
+		margin: 0 auto;
+	}
+	#rsvp .rsvp_wrap {
+		width: 410px;
+	}
+	#rsvp .rsvp_wrap input, #rsvp .rsvp_wrap select {
+		width: 310px;
+	}
 }

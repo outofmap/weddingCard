@@ -47,15 +47,15 @@
 					<ul>
 						<li class="scroll active"><a href="#slider">HOME</a></li>
 						<li class="scroll"><a href="#love_story">Our story</a></li>
-						<li class="scroll"><a href="#important_people">important people</a></li>
-						<li class="scroll"><a href="#event_parties">event & parties</a></li>
-						<li class="scroll"><a href="#rsvp">rsvp</a></li>
-						<li class="scroll"><a href="#blog">blog <b class="caret"></b></a>
+						<!-- <li class="scroll"><a href="#important_people">important people</a></li>
+						<li class="scroll"><a href="#event_parties">event & parties</a></li> -->
+						<li class="scroll"><a href="#rsvp">축하메시지</a></li>
+						<!-- <li class="scroll"><a href="#blog">blog <b class="caret"></b></a>
 							<ul class="dropdown">
 								<li><a href="blog.html">Blog Page</a></li>
 								<li><a href="single-post.html">Single Post</a></li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="scroll"><a href="#gallery">Gallery</a></li>
 						<li class="scroll"><a href="#our_location">our location</a></li>
 					</ul>
@@ -72,7 +72,6 @@
 				<div class="row">
 					<div class="col-lg-12">
 						<h1 class="wow fadeIn"  data-wow-duration="2000">We are Invite all <br> to Celebrate Our Wedding</h1>
-
 						<ul class="time_counter clearfix" id="countdowncontainer">
 							<!-- dynamically count down wil added by js -->
 						</ul>
@@ -293,7 +292,7 @@
 			<div class="container">
 				<div class="row wow slideInLeft">
 					<h2>“명언쓰는 곳입니다. <br> 사랑은 언제나 오래참고 사랑은 언제나 온유하며”</h2>
-					<button>갈라디아서</button>
+					<button>Love</button>
 				</div>
 			</div>
 		</div>
@@ -372,6 +371,11 @@
 						<!--여기에 최근 3개 축하메시지 보여주기 get요청 include-->
 					</div>
 				</div>
+			</div>
+			<div id="posts">
+				<% posts.forEach(function(post){ %>
+					<li>이름 <%=post.name%><br><%=post.letter%></li>
+					<% }); %>
 			</div>
 		</div>
 	</section> <!-- /#rsvp -->

@@ -82,7 +82,7 @@ var displaystring = '<li class="days"> '+ arguments[0] +' <br> days </li> <li cl
 
 }
 else{ //else if target date/time met
-var displaystring="<h2>The Party is Over!!</h2>";
+var displaystring="<h2>countdown d-day!</h2>";
 }
 return displaystring;
 }

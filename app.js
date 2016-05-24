@@ -22,8 +22,25 @@ var pool = mysql.createPool({
 });
 
 app.get('/',function(req,res){
-    res.render('index');
+    pool.getConnection(function(err, connection) {
+    // Use the connection
+        connection.query( 'SELECT * FROM post ORDER BY time DESC LIMIT 3', function(err, rows) {
+            console.log(rows);
+            res.render('index',{posts : rows});
+            connection.release();
+        });
+    });
 });
+// bcrypt.compare('asdf','$2a$10$SFWJRJ.IeQXJxvYcEACrS./sVQ3q2UNlUGO1HJKF5k1KxD6Aq3sUe',function (err,res) {
+//     if(err){
+//         console.log("error");
+//     }else if(res){
+//         console.log("password is true.");
+//         console.log("res:"+res);
+//     }else{
+//         console.log("password not matched.");
+//     }
+// });
 app.get('/upload', function (req,res) {
     res.render('upload');
 });
@@ -49,18 +66,7 @@ app.post('/writeMessage', function (req,res) {
             console.log(query.sql);
         });
     });
-
 });
-// bcrypt.compare('word',디비에서 가져온 password,function (err,res) {
-//     if(err){
-//         console.log("error");
-//     }else if(res){
-//         console.log("password is true.");
-//         console.log("res:"+res);
-//     }else{
-//         console.log("password not matched.");
-//     }
-// });
 
 app.get('/gallery', function(req,res){
     pool.getConnection(function(err, connection) {
