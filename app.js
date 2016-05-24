@@ -82,29 +82,41 @@ app.get('/gallery', function(req,res){
         });
     });
 });
+
 app.post('/uploadIMG',function(req, res){
+    console.log("upload in");
     var form = new formidable.IncomingForm();
     var filename;
+    console.log("upload next"+form);
+
     form.keepExtensions = true;
+    form.parse(req, function(err, fields, files) {
+        console.log('fields' + fields);
+        console.log('files' + files);
+    });
     form.on('fileBegin', function (name, file) {
+        console.log("file"+file);
         file.path = __dirname +'/uploads/'+ file.name;
         //DB에는 file.name를 저장
         filename = file.name;
         console.log("filename:"+filename);
 
     });
-
     form.on('end',function(){
         pool.getConnection(function(err, connection) {
             connection.query( 'INSERT INTO image SET filename = ?', filename , function(err, rows) {
-                res.redirect('/sucess');
+                res.redirect('/success');
                 connection.release();
             });
         });
     });
+    form.on('error', function(err){
+
+        console.log("upload err " + err);
+    });
 });
 
-app.get('/sucess', function (req,res) {
+app.get('/success', function (req,res) {
     res.render('success');
 });
 
