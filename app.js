@@ -58,9 +58,7 @@ app.post('/writeMessage', function (req,res) {
         console.log("메시지"+message);
         pool.getConnection(function (err,connection) {
             var query = connection.query('INSERT INTO post SET ?', post, function (err, result) {
-                res.json({
-                    "name":name, "message":message
-                });
+                res.redirect('/');
                 connection.release();
             });
             console.log(query.sql);

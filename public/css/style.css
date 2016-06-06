@@ -50,7 +50,7 @@ html,
 body{
 	font-family: 'Open Sans';
 	color: #939393;
-	font-size: 13px;
+	font-size: 15px;
 	line-height: 24px;
 	overflow-x:hidden;
 	-webkit-font-smoothing: antialiased;
@@ -413,8 +413,8 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	background-size: cover;
 }
 #slider .overlay {
-	padding: 170px 0;
-	background: rgba(0,0,0,.7);
+	/*padding: 170px 0;*/
+	background: #ffffff;
 }
 #slider h1 {
 	font-size: 60px;
@@ -513,7 +513,7 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	width: 180px;
 	height: 180px;
 	border-radius: 50%;
-	border: 10px solid #fff;
+	border: 5px solid #fff;
 	box-shadow: 0 2px 5px rgba(0,0,0,.1);
 	display: block;
 	margin-left: auto;
@@ -987,8 +987,8 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	background: rgba(255,109,109,.9);
 }
 #posts {
-	background-color: #F77A7A;
-	color: #FFF;
+	/*background-color: #F77A7A;*/
+	color: #555
 	font-size: 15px;
 	margin-top: 5px;
 	/*width: 310px;
@@ -1217,10 +1217,41 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 =========================*/
 
 
-#gallery .container-fluid {
-	padding: 0;
+#gallery  {
+	/*margin : 0;*/
+
 }
-#gallery ul li {
+
+/*@keyframes slidy {
+	0% { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; }
+	75% { left: -300%; }
+	95% { left: -300%; }
+	100% { left: -400%; }
+}
+
+body { margin: 0; }
+div#myslider {
+	overflow: hidden;
+	height : 480px;
+
+}
+div#myslider figure img { width: 20%; float: left; }
+div#myslider figure {
+	position: relative;
+	width: 500%;
+	margin: 0 auto;
+	left: 0;
+	text-align: left;
+	font-size: 0;
+	animation: 30s slidy infinite;
+}*/
+
+/*#gallery ul li {
 	position: relative;
 	width: 25%;
 	margin: 0;
@@ -1256,6 +1287,37 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 }
 #gallery ul li:hover .overlay {
 	opacity: 1;
+}*/
+.rslides {
+	position: relative;
+	list-style: none;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.rslides li {
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	display: none;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.rslides li:first-child {
+	position: relative;
+	display: block;
+	float: left;
+}
+
+.rslides img {
+	display: block;
+	height: auto;
+	float: left;
+	width: 100%;
+	border: 0;
 }
 
 /*==========================
