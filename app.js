@@ -9,7 +9,7 @@ var bcrypt = require('bcrypt-nodejs');
 app.use(bodyparser);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/pics', express.static(path.join(__dirname, 'uploads')));
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 80);
 app.set('view engine','ejs');
 var imageUrl = "./img/";
 
@@ -17,14 +17,18 @@ var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
-    database : 'wedding',
-    password : 'insideout1209'
+    database : 'mydb',
+    password : ''
 });
 
 app.get('/',function(req,res){
     pool.getConnection(function(err, connection) {
     // Use the connection
-        connection.query( 'SELECT * FROM post ORDER BY time DESC LIMIT 3', function(err, rows) {
+	if(err){
+		console.log("mysql error");
+		throw err;
+	}
+        connection.query( 'SELECT * FROM post ORDER BY time DESC LIMIT 2', function(err, rows) {
             console.log(rows);
             res.render('index',{posts : rows});
             connection.release();
@@ -57,6 +61,10 @@ app.post('/writeMessage', function (req,res) {
         console.log("pw"+password);
         console.log("메시지"+message);
         pool.getConnection(function (err,connection) {
+	    if(err) {
+	    	console.error(err);
+		throw err;
+	    }
             var query = connection.query('INSERT INTO post SET ?', post, function (err, result) {
                 res.redirect('/');
                 connection.release();
