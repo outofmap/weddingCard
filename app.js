@@ -17,10 +17,8 @@ var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
-    // database : 'mydb',
-    // password : 'insideout'
-    database : 'wedding',
-    password : 'insideout1209'
+    database : 'mydb',
+    password : 'insideout'
 });
 
 app.get('/',function(req,res){
