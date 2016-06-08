@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>선우와 수지가 결혼해요</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Main CSS -->
+    <link href="/css/style.css" rel="stylesheet" media="screen">
+    <!-- theme color css
+    <link href="css/colorname.css" rel="stylesheet" media="screen"> -->
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="js/respond.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <h2>전체 축하 메시지(최신순)</h2>
+    <div id="posts">
+        <% posts.forEach(function(post){ %>
+            <p><li>이름: <%=post.name%>  <%=post.time%> <br> <%=post.letter%></li></p>
+            <p>=================================================</p>
+            <% }); %>
+    </div>
+</body>
+</html>

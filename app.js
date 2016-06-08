@@ -9,7 +9,7 @@ var bcrypt = require('bcrypt-nodejs');
 app.use(bodyparser);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/pics', express.static(path.join(__dirname, 'uploads')));
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 80);
 app.set('view engine','ejs');
 var imageUrl = "./img/";
 
@@ -24,10 +24,10 @@ var pool = mysql.createPool({
 app.get('/',function(req,res){
     pool.getConnection(function(err, connection) {
     // Use the connection
-	if(err){
-		console.log("mysql error");
-		throw err;
-	}
+    	if(err){
+    		console.log("mysql error");
+    		throw err;
+    	}
         connection.query( 'SELECT * FROM post ORDER BY time DESC LIMIT 2', function(err, rows) {
             console.log(rows);
             res.render('index',{posts : rows});
@@ -48,6 +48,17 @@ app.get('/',function(req,res){
 app.get('/upload', function (req,res) {
     res.render('upload');
 });
+
+app.get('/all',function (req,res) {
+    pool.getConnection(function(err, connection) {
+    // Use the connection
+        connection.query( 'SELECT * FROM post ORDER BY time DESC', function(err, rows) {
+            console.log(rows);
+            res.render('all',{posts : rows});
+            connection.release();
+        });
+    });
+})
 
 app.post('/writeMessage', function (req,res) {
     var name = req.body.name;
