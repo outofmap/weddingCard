@@ -540,14 +540,14 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 	margin-bottom: 0;
 }
 #groom_bride .info-box span {
-	font-size: 12px;
+	font-size: 15px;
 	line-height: 24px;
 	font-weight: bold;
-	color: #a9a9a9;
+	color: #333;
 }
 #groom_bride .info-box p {
-	color: #bdbcbc;
-	font-size: 13px;
+	color: #555;
+	font-size: 15px;
 	line-height: 24px;
 	text-align: center;
 }

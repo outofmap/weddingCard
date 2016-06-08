@@ -18,7 +18,7 @@ var pool = mysql.createPool({
     host : 'localhost',
     user : 'root',
     database : 'mydb',
-    password : ''
+    password : 'insideout'
 });
 
 app.get('/',function(req,res){
