@@ -9,7 +9,7 @@ var bcrypt = require('bcrypt-nodejs');
 app.use(bodyparser);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/pics', express.static(path.join(__dirname, 'uploads')));
-app.set('port',process.env.PORT || 80);
+app.set('port',process.env.PORT || 3000);
 app.set('view engine','ejs');
 var imageUrl = "./img/";
 
@@ -17,8 +17,10 @@ var pool = mysql.createPool({
     connectionLimit : 10,
     host : 'localhost',
     user : 'root',
-    database : 'mydb',
-    password : 'insideout'
+    // database : 'mydb',
+    // password : 'insideout'
+    database : 'wedding',
+    password : 'insideout1209'
 });
 
 app.get('/',function(req,res){
