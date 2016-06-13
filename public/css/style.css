@@ -415,6 +415,7 @@ button:hover:before, .single_blog_post .readmore:hover:before, button:focus:befo
 #slider .overlay {
 	/*padding: 170px 0;*/
 	background: #ffffff;
+	text-align: center;
 }
 #slider h1 {
 	font-size: 60px;
