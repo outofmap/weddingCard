@@ -1,6 +1,6 @@
 # weddingCard
 Node.js, Express, Mysql, Ejs를 활용한 모바일 청첩장 (1인 프로젝트)  
-    
+[모바일 청첩장 보기](dearhere.com)     
 ##### Project duration : 1개월     
 ##### Language : JavaScript, HTML, CSS    
 ##### Database : Mysql    
